@@ -71,6 +71,7 @@ public class Transmogrifier
             ProcessorException
     {
         return transform(input,
+                         null,
                          processor);
     }
 
