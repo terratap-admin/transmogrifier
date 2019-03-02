@@ -19,7 +19,7 @@ package io.transmogrifier;
 import java.util.function.BiFunction;
 
 /**
- * A processor takes input and an extra for arguments, processes them, and generates an outout.
+ * A processor takes input and an extra for arguments, processes them, and generates an output.
  *
  * @param <I> input
  * @param <E> extra
@@ -32,7 +32,7 @@ public interface Processor<I, E, O>
      * Perform the process, taking the input and extra and creating an output.
      *
      * @param input the input parameter
-     * @param extra the extra paremater
+     * @param extra the extra parameter
      * @return the result
      * @throws ProcessorException if something goes wrong with the processing
      */

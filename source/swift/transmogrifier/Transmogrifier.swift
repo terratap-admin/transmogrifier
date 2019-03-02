@@ -16,11 +16,34 @@
 
 import Foundation
 
+/// Runs a processor on an optional input and extra to produce an output.
 class Transmogrifier
 {
+    /// Perform the transformation, taking the input and extra and creating an output.
+    ///
+    /// - Parameters:
+    ///   - input: the input parameter
+    ///   - extra: the extra parameter
+    ///   - processor: the processor to use in the transformation
+    /// - Returns: the result of the transformation
+    /// - Throws: if something goes wrong with the processing
     public func transform<I, E, O>(on input: I?, and extra: E?, with processor : Processor<I, E, O>) throws -> O?
     {
         let output = try processor.perform(on: input, and: extra)
+        
+        return output!
+    }
+    
+    /// <#Description#>
+    ///
+    /// - Parameters:
+    ///   - input: the input parameter
+    ///   - processor: the processor to use in the transformation
+    /// - Returns: the result of the transformation
+    /// - Throws: if something goes wrong with the processing
+    public func transform<I, Void, O>(on input: I?, with processor : Processor<I, Void, O>) throws -> O?
+    {
+        let output = try processor.perform(on: input)
         
         return output!
     }

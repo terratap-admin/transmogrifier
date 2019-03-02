@@ -33,9 +33,12 @@ class transmogrifierTests: XCTestCase
     {
         let transmogrifier = Transmogrifier()
         let processor = UppercaseProcessor()
-        let string : String
+        var string : String
         
         string = try transmogrifier.transform(on: "Hello", and: nil, with: processor)!
         XCTAssertEqual("HELLO", string)
+        
+        string = try transmogrifier.transform(on: "worlD", with: processor)!
+        XCTAssertEqual("WORLD", string)
     }
 }

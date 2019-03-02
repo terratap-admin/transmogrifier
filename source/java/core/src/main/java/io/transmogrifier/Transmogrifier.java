@@ -20,7 +20,7 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 
 /**
- *
+ * Runs a processor on an optional input and extra to produce an output.
  */
 public class Transmogrifier
 {
@@ -71,7 +71,6 @@ public class Transmogrifier
             ProcessorException
     {
         return transform(input,
-                         null,
                          processor);
     }
 
@@ -99,7 +98,7 @@ public class Transmogrifier
      *
      * @param input    the input parameter
      * @param extra    the extra parameter
-     * @param function the function to use in the  transformation
+     * @param function the function to use in the transformation
      * @param <I>      input
      * @param <E>      extra
      * @param <O>      output
