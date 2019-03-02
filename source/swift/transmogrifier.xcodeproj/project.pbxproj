@@ -1,0 +1,474 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C702D9032229C23900B7ADEC /* transmogrifier.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C702D8F92229C23800B7ADEC /* transmogrifier.framework */; };
+		C702D9082229C23900B7ADEC /* transmogrifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C702D9072229C23900B7ADEC /* transmogrifierTests.swift */; };
+		C702D90A2229C23900B7ADEC /* transmogrifier.h in Headers */ = {isa = PBXBuildFile; fileRef = C702D8FC2229C23800B7ADEC /* transmogrifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C702D9142229C25100B7ADEC /* Processor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C702D9132229C25100B7ADEC /* Processor.swift */; };
+		C702D9162229C42E00B7ADEC /* Transmogrifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C702D9152229C42E00B7ADEC /* Transmogrifier.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C702D9042229C23900B7ADEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C702D8F02229C23800B7ADEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C702D8F82229C23800B7ADEC;
+			remoteInfo = transmogrifier;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C702D8F92229C23800B7ADEC /* transmogrifier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = transmogrifier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C702D8FC2229C23800B7ADEC /* transmogrifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = transmogrifier.h; sourceTree = "<group>"; };
+		C702D8FD2229C23800B7ADEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C702D9022229C23900B7ADEC /* transmogrifierTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = transmogrifierTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C702D9072229C23900B7ADEC /* transmogrifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = transmogrifierTests.swift; sourceTree = "<group>"; };
+		C702D9092229C23900B7ADEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C702D9132229C25100B7ADEC /* Processor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Processor.swift; sourceTree = "<group>"; };
+		C702D9152229C42E00B7ADEC /* Transmogrifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transmogrifier.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C702D8F62229C23800B7ADEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C702D8FF2229C23900B7ADEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C702D9032229C23900B7ADEC /* transmogrifier.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C702D8EF2229C23800B7ADEC = {
+			isa = PBXGroup;
+			children = (
+				C702D8FB2229C23800B7ADEC /* transmogrifier */,
+				C702D9062229C23900B7ADEC /* transmogrifierTests */,
+				C702D8FA2229C23800B7ADEC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C702D8FA2229C23800B7ADEC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C702D8F92229C23800B7ADEC /* transmogrifier.framework */,
+				C702D9022229C23900B7ADEC /* transmogrifierTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C702D8FB2229C23800B7ADEC /* transmogrifier */ = {
+			isa = PBXGroup;
+			children = (
+				C702D8FC2229C23800B7ADEC /* transmogrifier.h */,
+				C702D8FD2229C23800B7ADEC /* Info.plist */,
+				C702D9132229C25100B7ADEC /* Processor.swift */,
+				C702D9152229C42E00B7ADEC /* Transmogrifier.swift */,
+			);
+			path = transmogrifier;
+			sourceTree = "<group>";
+		};
+		C702D9062229C23900B7ADEC /* transmogrifierTests */ = {
+			isa = PBXGroup;
+			children = (
+				C702D9072229C23900B7ADEC /* transmogrifierTests.swift */,
+				C702D9092229C23900B7ADEC /* Info.plist */,
+			);
+			path = transmogrifierTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C702D8F42229C23800B7ADEC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C702D90A2229C23900B7ADEC /* transmogrifier.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		C702D8F82229C23800B7ADEC /* transmogrifier */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C702D90D2229C23900B7ADEC /* Build configuration list for PBXNativeTarget "transmogrifier" */;
+			buildPhases = (
+				C702D8F42229C23800B7ADEC /* Headers */,
+				C702D8F52229C23800B7ADEC /* Sources */,
+				C702D8F62229C23800B7ADEC /* Frameworks */,
+				C702D8F72229C23800B7ADEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = transmogrifier;
+			productName = transmogrifier;
+			productReference = C702D8F92229C23800B7ADEC /* transmogrifier.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C702D9012229C23900B7ADEC /* transmogrifierTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C702D9102229C23900B7ADEC /* Build configuration list for PBXNativeTarget "transmogrifierTests" */;
+			buildPhases = (
+				C702D8FE2229C23900B7ADEC /* Sources */,
+				C702D8FF2229C23900B7ADEC /* Frameworks */,
+				C702D9002229C23900B7ADEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C702D9052229C23900B7ADEC /* PBXTargetDependency */,
+			);
+			name = transmogrifierTests;
+			productName = transmogrifierTests;
+			productReference = C702D9022229C23900B7ADEC /* transmogrifierTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C702D8F02229C23800B7ADEC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Terratap Technologies Inc.";
+				TargetAttributes = {
+					C702D8F82229C23800B7ADEC = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
+					};
+					C702D9012229C23900B7ADEC = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = C702D8F32229C23800B7ADEC /* Build configuration list for PBXProject "transmogrifier" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C702D8EF2229C23800B7ADEC;
+			productRefGroup = C702D8FA2229C23800B7ADEC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C702D8F82229C23800B7ADEC /* transmogrifier */,
+				C702D9012229C23900B7ADEC /* transmogrifierTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C702D8F72229C23800B7ADEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C702D9002229C23900B7ADEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C702D8F52229C23800B7ADEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C702D9142229C25100B7ADEC /* Processor.swift in Sources */,
+				C702D9162229C42E00B7ADEC /* Transmogrifier.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C702D8FE2229C23900B7ADEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C702D9082229C23900B7ADEC /* transmogrifierTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C702D9052229C23900B7ADEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C702D8F82229C23800B7ADEC /* transmogrifier */;
+			targetProxy = C702D9042229C23900B7ADEC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C702D90B2229C23900B7ADEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C702D90C2229C23900B7ADEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C702D90E2229C23900B7ADEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = L9GR6R2227;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = transmogrifier/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.transmogrifier.transmogrifier;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C702D90F2229C23900B7ADEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = L9GR6R2227;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = transmogrifier/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.transmogrifier.transmogrifier;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C702D9112229C23900B7ADEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L9GR6R2227;
+				INFOPLIST_FILE = transmogrifierTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.transmogrifier.transmogrifierTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C702D9122229C23900B7ADEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L9GR6R2227;
+				INFOPLIST_FILE = transmogrifierTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.transmogrifier.transmogrifierTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C702D8F32229C23800B7ADEC /* Build configuration list for PBXProject "transmogrifier" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C702D90B2229C23900B7ADEC /* Debug */,
+				C702D90C2229C23900B7ADEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C702D90D2229C23900B7ADEC /* Build configuration list for PBXNativeTarget "transmogrifier" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C702D90E2229C23900B7ADEC /* Debug */,
+				C702D90F2229C23900B7ADEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C702D9102229C23900B7ADEC /* Build configuration list for PBXNativeTarget "transmogrifierTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C702D9112229C23900B7ADEC /* Debug */,
+				C702D9122229C23900B7ADEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C702D8F02229C23800B7ADEC /* Project object */;
+}
