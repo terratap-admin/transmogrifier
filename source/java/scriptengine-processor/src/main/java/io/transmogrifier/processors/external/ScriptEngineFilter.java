@@ -16,8 +16,8 @@
 
 package io.transmogrifier.processors.external;
 
-import io.transmogrifier.Processor;
-import io.transmogrifier.ProcessorException;
+import io.transmogrifier.Filter;
+import io.transmogrifier.FilterException;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
@@ -26,12 +26,12 @@ import javax.script.ScriptException;
 import java.util.List;
 
 /**
- * Use the Scripting Engine framework to perform the processor functions.
+ * Use the Scripting Engine framework to perform the filter functions.
  *
  * @param <O>
  */
-public class ScriptEngineProcessor<O>
-        implements Processor<List<Object>, Void, O>
+public class ScriptEngineFilter<O>
+        implements Filter<List<Object>, Void, O>
 {
     /**
      * The name of the script engine to use.
@@ -44,21 +44,21 @@ public class ScriptEngineProcessor<O>
     private final String script;
 
     /**
-     * The function to call in the script to perform the processing.
+     * The function to call in the script to perform the filtering.
      */
     private final String entryPoint;
 
     /**
-     * Construct a ScriptEngineProcessor with the specified script engine,
+     * Construct a ScriptEngineFilter with the specified script engine,
      * source code, and entry point.
      *
      * @param name the name of the script engine to use
      * @param code the source code to run
      * @param func the entry point into the code
      */
-    public ScriptEngineProcessor(final String name,
-                                 final String code,
-                                 final String func)
+    public ScriptEngineFilter(final String name,
+                              final String code,
+                              final String func)
     {
         engineName = name;
         script = code;
@@ -66,18 +66,18 @@ public class ScriptEngineProcessor<O>
     }
 
     /**
-     * Perform the process, taking the input and extra and creating an output.
+     * Perform the filter, taking the input and extra and creating an output.
      *
      * @param parameters the input parameters to pass to the entry point
      * @param extra      ignored
      * @return the result
-     * @throws ProcessorException if something goes wrong with the processing
+     * @throws FilterException if something goes wrong with the filtering
      */
     @Override
     public O perform(final List<Object> parameters,
                      final Void extra)
             throws
-            ProcessorException
+            FilterException
     {
         final ScriptEngineManager manager;
         final ScriptEngine        engine;
@@ -102,8 +102,8 @@ public class ScriptEngineProcessor<O>
         }
         catch(final ScriptException | NoSuchMethodException ex)
         {
-            throw new ProcessorException(ex.getMessage(),
-                                         ex);
+            throw new FilterException(ex.getMessage(),
+                                      ex);
         }
     }
 }
