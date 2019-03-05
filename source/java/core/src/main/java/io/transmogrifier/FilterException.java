@@ -17,29 +17,29 @@
 package io.transmogrifier;
 
 /**
- * Thrown when there is an issue with a processor.
+ * Thrown when there is an issue with a filter.
  */
-public class ProcessorException
+public class FilterException
         extends Exception
 {
     /**
-     * Construct a ProcessorException with the specified message
+     * Construct a FilterException with the specified message
      *
      * @param msg the message detail
      */
-    public ProcessorException(final String msg)
+    public FilterException(final String msg)
     {
         super(msg);
     }
 
     /**
-     * Construct a ProcessorException with the specified message and cause
+     * Construct a FilterException with the specified message and cause
      *
      * @param msg   the message detail
      * @param cause the original cause
      */
-    public ProcessorException(final String msg,
-                              final Throwable cause)
+    public FilterException(final String msg,
+                           final Throwable cause)
     {
         super(msg,
               cause);

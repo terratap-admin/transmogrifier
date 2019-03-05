@@ -16,29 +16,30 @@
 
 package io.transmogrifier;
 
-import java.util.function.Function;
+import java.util.function.BiFunction;
 
 /**
- * An adapter to make a Function act as a Processor
+ * An adapter to make a BiFunction act as a Filter
  *
  * @param <I> input
+ * @param <E> extra
  * @param <O> output
- * @see java.util.function.Function
+ * @see java.util.function.BiFunction
  */
-public class FunctionProcessor<I, O>
-        implements Processor<I, Void, O>
+public class BiFunctionFilter<I, E, O>
+        implements Filter<I, E, O>
 {
     /**
      * The function to wrap.
      */
-    private final Function<I, O> function;
+    private final BiFunction<I, E, O> function;
 
     /**
-     * Construct a FunctionProcessor with the specified function.
+     * Construct a FunctionFilter with the specified function.
      *
      * @param func the function to wrap
      */
-    public FunctionProcessor(final Function<I, O> func)
+    public BiFunctionFilter(final BiFunction<I, E, O> func)
     {
         if(func == null)
         {
@@ -49,25 +50,27 @@ public class FunctionProcessor<I, O>
     }
 
     /**
-     * Perform the process by calling apply on the input and returning the result.
+     * Perform the filter by calling apply on the input and extra and returning the result.
      *
      * @param input the input parameter
+     * @param input the extra parameter
      * @return the result
-     * @throws RuntimeException if something goes wrong with the processing
+     * @throws RuntimeException if something goes wrong with the filtering
      */
     public O perform(final I input,
-                     final Void extra)
+                     final E extra)
             throws
-            ProcessorException
+            FilterException
     {
         try
         {
-            return function.apply(input);
+            return function.apply(input,
+                                  extra);
         }
         catch(final RuntimeException ex)
         {
-            throw new ProcessorException(ex.getMessage(),
-                                         ex);
+            throw new FilterException(ex.getMessage(),
+                                      ex);
         }
     }
 }

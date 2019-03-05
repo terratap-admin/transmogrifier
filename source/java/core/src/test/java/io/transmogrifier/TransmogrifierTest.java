@@ -29,37 +29,37 @@ public class TransmogrifierTest
     @Test
     public void testTransformProcessor()
             throws
-            ProcessorException
+            FilterException
     {
-        final Transmogrifier                   transmogrifier;
-        final Processor<String, Void, Integer> processor;
+        final Transmogrifier                transmogrifier;
+        final Filter<String, Void, Integer> filter;
 
         transmogrifier = new Transmogrifier();
-        processor = new Processor<String, Void, Integer>()
+        filter = new Filter<String, Void, Integer>()
         {
             @Override
             public Integer perform(final String input,
                                    final Void extra)
                     throws
-                    ProcessorException
+                    FilterException
             {
                 return Integer.parseInt(input);
             }
         };
 
         assertThat(transmogrifier.transform("123",
-                                            processor),
+                                            filter),
                    is(equalTo(123)));
         assertThat(transmogrifier.transform("45",
                                             null,
-                                            processor),
+                                            filter),
                    is(equalTo(45)));
     }
 
     @Test
     public void testTransformFunction()
             throws
-            ProcessorException
+            FilterException
     {
         final Transmogrifier            transmogrifier;
         final Function<String, Integer> function;
@@ -82,7 +82,7 @@ public class TransmogrifierTest
     @Test
     public void testTransformBiFunction()
             throws
-            ProcessorException
+            FilterException
     {
         final Transmogrifier                    transmogrifier;
         final BiFunction<String, Void, Integer> function;

@@ -20,37 +20,37 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 
 /**
- * Runs a processor on an optional input and extra to produce an output.
+ * Runs a filter on an optional input and extra to produce an output.
  */
 public class Transmogrifier
 {
     /**
      * Perform the transformation, taking the input and extra and creating an output.
      *
-     * @param input     the input parameter
-     * @param extra     the extra parameter
-     * @param processor the processor to use in the transformation
-     * @param <I>       input
-     * @param <E>       extra
-     * @param <O>       output
+     * @param input  the input parameter
+     * @param extra  the extra parameter
+     * @param filter the filter to use in the transformation
+     * @param <I>    input
+     * @param <E>    extra
+     * @param <O>    output
      * @return the result of the transformation
-     * @throws ProcessorException if something goes wrong with the processing
+     * @throws FilterException if something goes wrong with the filtering
      */
     public <I, E, O> O transform(final I input,
                                  final E extra,
-                                 final Processor<I, E, O> processor)
+                                 final Filter<I, E, O> filter)
             throws
-            ProcessorException
+            FilterException
     {
         final O output;
 
-        if(processor == null)
+        if(filter == null)
         {
-            throw new RuntimeException("processor cannot be null");
+            throw new RuntimeException("filter cannot be null");
         }
 
-        output = processor.perform(input,
-                                   extra);
+        output = filter.perform(input,
+                                extra);
 
         return output;
     }
@@ -58,21 +58,21 @@ public class Transmogrifier
     /**
      * Perform the transformation, taking the input, passing null for the extra, and creating an output.
      *
-     * @param input     the input parameter
-     * @param processor the processor to use in the transformation
-     * @param <I>       input
-     * @param <O>       output
+     * @param input  the input parameter
+     * @param filter the filter to use in the transformation
+     * @param <I>    input
+     * @param <O>    output
      * @return the result of the transformation
-     * @throws ProcessorException if something goes wrong with the processing
+     * @throws FilterException if something goes wrong with the filtering
      */
     public <I, O> O transform(final I input,
-                              final Processor<I, Void, O> processor)
+                              final Filter<I, Void, O> filter)
             throws
-            ProcessorException
+            FilterException
     {
         return transform(input,
                          null,
-                         processor);
+                         filter);
     }
 
     /**
@@ -83,15 +83,15 @@ public class Transmogrifier
      * @param <I>      input
      * @param <O>      output
      * @return the result of the transformation
-     * @throws ProcessorException if something goes wrong with the processing
+     * @throws FilterException if something goes wrong with the filtering
      */
     public <I, O> O transform(final I input,
                               final Function<I, O> function)
             throws
-            ProcessorException
+            FilterException
     {
         return transform(input,
-                         new FunctionProcessor<>(function));
+                         new FunctionFilter<>(function));
     }
 
     /**
@@ -104,16 +104,16 @@ public class Transmogrifier
      * @param <E>      extra
      * @param <O>      output
      * @return the result of the transformation
-     * @throws ProcessorException if something goes wrong with the processing
+     * @throws FilterException if something goes wrong with the filtering
      */
     public <I, E, O> O transform(final I input,
                                  final E extra,
                                  final BiFunction<I, E, O> function)
             throws
-            ProcessorException
+            FilterException
     {
         return transform(input,
                          extra,
-                         new BiFunctionProcessor<>(function));
+                         new BiFunctionFilter<>(function));
     }
 }

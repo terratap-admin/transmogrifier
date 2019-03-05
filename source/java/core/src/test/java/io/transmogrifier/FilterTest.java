@@ -22,34 +22,34 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
-public class ProcessorTest
+public class FilterTest
 {
     @Test
     public void testProcess()
             throws
-            ProcessorException
+            FilterException
     {
-        final Processor<String, Void, Integer> processor;
+        final Filter<String, Void, Integer> filter;
 
-        processor = new Processor<String, Void, Integer>()
+        filter = new Filter<String, Void, Integer>()
         {
             @Override
             public Integer perform(String input,
                                    Void extra)
                     throws
-                    ProcessorException
+                    FilterException
             {
                 return Integer.parseInt(input);
             }
         };
 
-        assertThat(processor.perform("123"),
+        assertThat(filter.perform("123"),
                    is(equalTo(123)));
-        assertThat(processor.perform("45",
-                                     null),
+        assertThat(filter.perform("45",
+                                  null),
                    is(equalTo(45)));
-        assertThat(processor.apply("6",
-                                   null),
+        assertThat(filter.apply("6",
+                                null),
                    is(equalTo(6)));
     }
 }
