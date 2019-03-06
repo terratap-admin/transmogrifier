@@ -34,7 +34,7 @@ class Transmogrifier
         return output!
     }
     
-    /// <#Description#>
+    /// Perform the transformation, taking the input, using nil for the extra, and creating an output.
     ///
     /// - Parameters:
     ///   - input: the input parameter
