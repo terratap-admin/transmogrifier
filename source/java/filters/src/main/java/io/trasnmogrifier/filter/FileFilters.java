@@ -11,12 +11,22 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 
+/**
+ *
+ */
 public final class FileFilters
 {
+    /**
+     *
+     */
     private FileFilters()
     {
     }
 
+    /**
+     * @param <E>
+     * @param <O>
+     */
     public static abstract class FileFilter<E, O>
             implements Filter<File, E, O>
     {
@@ -52,6 +62,9 @@ public final class FileFilters
                                         E extra);
     }
 
+    /**
+     *
+     */
     public static class FileToBinaryFilter
             extends FileFilter<Void, byte[]>
     {
@@ -63,6 +76,9 @@ public final class FileFilters
         }
     }
 
+    /**
+     *
+     */
     public static class FileToStringFilter
             extends FileFilter<Charset, String>
     {
@@ -89,6 +105,9 @@ public final class FileFilters
         }
     }
 
+    /**
+     *
+     */
     public static class StringToFileFilter
             implements Filter<String, File, Void>
     {

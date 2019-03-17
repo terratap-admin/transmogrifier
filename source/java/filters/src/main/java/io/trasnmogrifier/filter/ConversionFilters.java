@@ -3,12 +3,23 @@ package io.trasnmogrifier.filter;
 import io.transmogrifier.Filter;
 import io.transmogrifier.FilterException;
 
+/**
+ *
+ */
 public final class ConversionFilters
 {
+    /**
+     *
+     */
     private ConversionFilters()
     {
     }
 
+    /**
+     * @param str
+     * @param radix
+     * @return
+     */
     public static int toInt(final String str,
                             final int radix)
     {
@@ -28,11 +39,19 @@ public final class ConversionFilters
         }
     }
 
+    /**
+     * @param <I>
+     * @param <E>
+     * @param <O>
+     */
     public interface ConversionFilter<I, E, O>
             extends Filter<I, E, O>
     {
     }
 
+    /**
+     *
+     */
     public static class StringToInt
             implements ConversionFilter<String, Integer, Integer>
     {

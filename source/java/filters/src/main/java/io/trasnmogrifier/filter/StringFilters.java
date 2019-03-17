@@ -5,22 +5,37 @@ import io.transmogrifier.UnaryFilter;
 
 import java.util.Locale;
 
+/**
+ *
+ */
 public final class StringFilters
 {
+    /**
+     *
+     */
     private StringFilters()
     {
     }
 
+    /**
+     * @param <E>
+     */
     public interface StringFilter<E>
             extends Filter<String, E, String>
     {
     }
 
+    /**
+     *
+     */
     public interface UnaryStringFilter
             extends UnaryFilter<String, String>
     {
     }
 
+    /**
+     *
+     */
     public static class UpperCaseFilter
             implements StringFilter<Locale>
     {
@@ -43,6 +58,9 @@ public final class StringFilters
         }
     }
 
+    /**
+     *
+     */
     public static class UnaryUpperCaseFilter
             implements UnaryStringFilter
     {
@@ -53,6 +71,9 @@ public final class StringFilters
         }
     }
 
+    /**
+     *
+     */
     public static class LowerCaseFilter
             implements StringFilter<Locale>
     {
@@ -75,6 +96,9 @@ public final class StringFilters
         }
     }
 
+    /**
+     *
+     */
     public static class UnaryLowerCaseFilter
             implements UnaryStringFilter
     {

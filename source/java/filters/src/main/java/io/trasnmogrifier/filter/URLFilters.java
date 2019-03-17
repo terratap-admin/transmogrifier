@@ -20,12 +20,22 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.function.Supplier;
 
+/**
+ *
+ */
 public final class URLFilters
 {
+    /**
+     *
+     */
     private URLFilters()
     {
     }
 
+    /**
+     * @param <E>
+     * @param <O>
+     */
     public static abstract class URLFilter<E, O>
             implements Filter<URL, E, O>
     {
@@ -68,33 +78,52 @@ public final class URLFilters
             }
         }
 
+        /**
+         * @param response
+         * @return
+         * @throws IOException
+         */
         protected byte[] getContent(final HttpResponse response)
                 throws
                 IOException
         {
-            final InputStream stream;
-            final byte[] bytes;
+            final InputStream           stream;
+            final byte[]                bytes;
             final ByteArrayOutputStream buffer;
-            int nRead;
+            int                         nRead;
 
             stream = response.getContent();
             buffer = new ByteArrayOutputStream();
             bytes = new byte[16384];
 
-            while((nRead = stream.read(bytes, 0, bytes.length)) != -1)
+            while((nRead = stream.read(bytes,
+                                       0,
+                                       bytes.length)) != -1)
             {
-                buffer.write(bytes, 0, nRead);
+                buffer.write(bytes,
+                             0,
+                             nRead);
             }
 
             return buffer.toByteArray();
         }
 
+        /**
+         * @param bytes
+         * @param suppliedCharset
+         * @param extra
+         * @return
+         * @throws IOException
+         */
         protected abstract O convertBytes(final byte[] bytes,
                                           final Charset suppliedCharset,
                                           final E extra)
                 throws
                 IOException;
 
+        /**
+         *
+         */
         protected class Downloader
                 implements Supplier<HttpResponse>
         {
@@ -162,9 +191,18 @@ public final class URLFilters
         }
     }
 
+    /**
+     *
+     */
     public static class URLToBinaryFilter
             extends URLFilter<Void, byte[]>
     {
+        /**
+         * @param bytes
+         * @param suppliedCharset
+         * @param extra
+         * @return
+         */
         @Override
         protected byte[] convertBytes(final byte[] bytes,
                                       final Charset suppliedCharset,
@@ -174,9 +212,19 @@ public final class URLFilters
         }
     }
 
+    /**
+     *
+     */
     public static class URLToStringFilter
             extends URLFilter<Charset, String>
     {
+        /**
+         * @param bytes
+         * @param suppliedCharset
+         * @param charset
+         * @return
+         * @throws IOException
+         */
         @Override
         protected String convertBytes(final byte[] bytes,
                                       final Charset suppliedCharset,
