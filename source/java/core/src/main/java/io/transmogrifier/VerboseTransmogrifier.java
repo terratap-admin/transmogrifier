@@ -16,14 +16,11 @@
 
 package io.transmogrifier;
 
-import java.util.function.BiFunction;
-import java.util.function.Function;
-
 /**
  * Runs a filter on an optional input and extra to produce an output.
  */
 public class VerboseTransmogrifier
-    extends Transmogrifier
+        extends Transmogrifier
 {
     /**
      * Perform the transformation, taking the input and extra and creating an output.

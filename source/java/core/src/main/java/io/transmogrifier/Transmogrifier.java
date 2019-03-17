@@ -66,7 +66,7 @@ public class Transmogrifier
      * @throws FilterException if something goes wrong with the filtering
      */
     public <I, O> O transform(final I input,
-                              final Filter<I, Void, O> filter)
+                              final Filter<I, ?, O> filter)
             throws
             FilterException
     {
