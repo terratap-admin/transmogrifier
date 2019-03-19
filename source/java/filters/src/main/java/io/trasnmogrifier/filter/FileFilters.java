@@ -2,6 +2,7 @@ package io.trasnmogrifier.filter;
 
 import io.transmogrifier.Filter;
 import io.transmogrifier.FilterException;
+import io.transmogrifier.UnaryFilter;
 
 import java.io.File;
 import java.io.IOException;
@@ -63,6 +64,42 @@ public final class FileFilters
     }
 
     /**
+     * @param <E>
+     * @param <O>
+     */
+    public static abstract class UnaryFileFilter<O>
+            implements UnaryFilter<File, O>
+    {
+        @Override
+        public O perform(final File file)
+                throws
+                FilterException
+        {
+            final Path path;
+
+            path = file.toPath();
+
+            try
+            {
+                final byte[] bytes;
+                final O      contents;
+
+                bytes = Files.readAllBytes(path);
+                contents = getContent(bytes);
+
+                return contents;
+            }
+            catch(final IOException ex)
+            {
+                throw new FilterException(ex.getMessage(),
+                                          ex);
+            }
+        }
+
+        protected abstract O getContent(byte[] bytes);
+    }
+
+    /**
      *
      */
     public static class FileToBinaryFilter
@@ -71,6 +108,19 @@ public final class FileFilters
         @Override
         protected byte[] getContent(final byte[] bytes,
                                     final Void ignore)
+        {
+            return bytes;
+        }
+    }
+
+    /**
+     *
+     */
+    public static class UnaryFileToBinaryFilter
+            extends UnaryFileFilter<byte[]>
+    {
+        @Override
+        protected byte[] getContent(final byte[] bytes)
         {
             return bytes;
         }
@@ -97,6 +147,28 @@ public final class FileFilters
             {
                 actualCharset = charset;
             }
+
+            contents = new String(bytes,
+                                  actualCharset);
+
+            return contents;
+        }
+    }
+
+
+    /**
+     *
+     */
+    public static class UnaryFileToStringFilter
+            extends UnaryFileFilter<String>
+    {
+        @Override
+        protected String getContent(final byte[] bytes)
+        {
+            final Charset actualCharset;
+            final String  contents;
+
+            actualCharset = StandardCharsets.UTF_8;
 
             contents = new String(bytes,
                                   actualCharset);
